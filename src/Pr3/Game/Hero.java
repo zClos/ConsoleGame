@@ -1,9 +1,11 @@
 package Pr3.Game;
 
 /**
- *
- * @author User
+ * Pr3-5 (Support class)
+ * It's described activity & data of hero in game.
+ * Created by Alexander Alkhimyonok on 02.05.2017.
  */
+
 class Hero {
     private int x = 0;
     private int y = 0;
@@ -29,7 +31,7 @@ class Hero {
         return name;
     }
     
-    public void setHeroToField(char[][] field, int y, int x) {
+    private void setHeroToField(char[][] field, int y, int x) {
         this.y = y;
         this.x = x;
         field[y][x] = name;
@@ -46,7 +48,7 @@ class Hero {
     }
     
     private boolean checkLocation(char[][] curField, int curY, int curX) {
-        return (curField[curY][curX] != 'X');
+        return curField[curY][curX] != 'X';
     }
     
     private boolean moveCondition(char[][] curField, char direction){

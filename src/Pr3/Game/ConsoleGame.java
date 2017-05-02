@@ -5,12 +5,21 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- *
- * @author User
+ * Pr3-5
+ * Create a game. You have a field 10x10 cells. Your initial position is left down corner. 
+ * You should follow the hero to the top right corner through the field of obstacles.
+ * Use ‘w’, ’e’, ’n’, ’s’ (or alternatively '4', '6', '8', '2') symbols read from console.
+ * Use all possible forms of unary increment and decrement operations to move the hero in the given directions.
+ * Each time assign the result of the operation to your variable. Use a switch
+ * statement a the program. 
+ * Show the current position of the hero on the field in console as “X” symbol.
+ * Created by Alexander Alkhimyonok on 02.05.2017.
  */
+
 public class ConsoleGame {
     
-    private char getDirection() {
+//I was need to do a bit changes at this method cuz it can't return input {w,a,s,d} control keys
+    private char getDirection() {       
         char direction = 0;
 
         try {
@@ -36,11 +45,12 @@ public class ConsoleGame {
         hero.locateToField(gameField);
         System.out.println("Найдите выход из лабиринта\nВаше положение - Н, выход - Е\nДля преемещения используйте: w,a,s,d или 8,4,2,6 соответственно");
         gameField.showField();
+        
         boolean stateMotion;
         do{
-        char dir = game.getDirection();
-        stateMotion = hero.move(dir, gameField);
-        gameField.showField();
+            char direction = game.getDirection();
+            stateMotion = hero.move(direction, gameField);
+            gameField.showField();
         } while (stateMotion);
     }
 }

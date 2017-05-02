@@ -2,9 +2,11 @@ package Pr3.Game;
 
 
 /**
- *
- * @author User
+ * Pr3-5 (Support class) 
+ * It's described activity & data of game field. 
+ * Created by Alexander Alkhimyonok on 02.05.2017.
  */
+
 class Field {
     private char[][] field;
     private int blockDensity = 4;
