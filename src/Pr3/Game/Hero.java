@@ -104,7 +104,7 @@ class Hero {
     private boolean exitCondition(char[][] curField, char direction) {
         int curY = this.getHeroY();
         int curX = this.getHeroX();
-        
+        try {
         switch (direction) {
             case 'w':
             case '8':
@@ -121,6 +121,9 @@ class Hero {
         }
         
         return curField[curY][curX] == 'E';
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            return false;
+        }
     }
     
     private void replaceHero(char[][] curField, int curY,int curX, char direction){
